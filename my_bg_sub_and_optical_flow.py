@@ -4,7 +4,6 @@ import cv2
 import numpy as np
 import time
 import matplotlib.pyplot as plt
-from mycv import mycv
 
 int2str = lambda num, blank: ("{:0"+str(blank)+"d}").format(num)
 
@@ -106,7 +105,8 @@ def setMaskOntoImage(mask, img):
 
 if __name__=="__main__":
 
-    image_folder = "my_images2/"
+    image_folder = "my_images/"
+    # image_folder = "my_images2/"
     image_folder_out = image_folder[:-1] + "_res/"
 
     of = OpticalFlow()
