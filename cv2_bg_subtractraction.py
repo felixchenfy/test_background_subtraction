@@ -15,13 +15,13 @@ else:
 
 fgbg = cv2.createBackgroundSubtractorMOG2()
 
-for idx_image in range(130, 400+1):
+for cnt_img in range(130, 400+1):
     if FROM_VIDEO:
         ret, frame = cap.read()
     else:
-        filename = int2str(idx_image, 5)+".png"
+        filename = int2str(cnt_img, 5)+".png"
         frame = cv2.imread(image_folder + filename)
-    print("{}th image".format(idx_image))
+    print("{}th image".format(cnt_img))
     
     fgmask = fgbg.apply(frame)
     cv2.imshow('frame',fgmask)

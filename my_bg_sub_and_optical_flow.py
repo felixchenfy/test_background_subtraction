@@ -112,15 +112,15 @@ if __name__=="__main__":
     of = OpticalFlow()
     bg = ModelBackground()
 
-    for idx_image in range(130, 400+1):
-        filename = int2str(idx_image, 5)+".png"
+    for cnt_img in range(130, 400+1):
+        filename = int2str(cnt_img, 5)+".png"
         img = cv2.imread(image_folder + filename)
         img = cv2.resize(img, (0,0), fx=0.6, fy=0.6) 
 
         # Compute optical flow
         of.insert_image(img)
         flow_magnitude = of.compute_optical_flow()
-        print("{}th image".format(idx_image), ", max vel = ", flow_magnitude.max())
+        print("{}th image".format(cnt_img), ", max vel = ", flow_magnitude.max())
         # flow_img = of.flow_to_image(flow_magnitude)
         mask_of = of.get_mask_of_moving()
 
